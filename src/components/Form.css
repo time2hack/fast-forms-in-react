@@ -5,7 +5,8 @@
   display: block;
   margin-bottom: 10px;
 }
-.form-field label {
-  display: block;
+.form-field label,
+.form-field input {
+  display: inline-block;
   margin: 5px;
 }

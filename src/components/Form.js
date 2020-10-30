@@ -1,18 +1,20 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import Input from './Input'
-import './Form.module.css'
+import './Form.css'
 
 const FIELDS = {
   fullName: {
     type: 'text', // input type
     name: 'fullName', // Form input name
     label: 'Full Name', // Label for Input
-    placeholder: "John Doe", // Placeholder
-    validations: [{
-      on: 'change',
-      error: 'This field is required',
-      validator: (value) => Boolean(value)
-    }],
+    placeholder: 'John Doe', // Placeholder
+    validations: [
+      {
+        on: 'change',
+        error: 'This field is required',
+        validator: (value) => Boolean(value)
+      }
+    ]
   }
 }
 
