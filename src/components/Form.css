@@ -2,11 +2,31 @@
   display: block;
 }
 .form-field {
-  display: block;
-  margin-bottom: 10px;
+  max-width: 450px;
+  display: flex;
+  margin: 10px auto;
 }
-.form-field label,
-.form-field input {
+.form-field > label {
+  flex: 0 0 200px;
+  text-align: right;
+}
+.form-field > * {
+  flex: 0 0 250px;
   display: inline-block;
   margin: 5px;
+  font-weight: 700;
+}
+.flex-col {
+  display:  flex;
+  flex-direction: column;
+  text-align: left;
+}
+.form-field ul {
+  display: block;
+  list-style: none;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  margin-right: 10px;
 }

@@ -1,35 +1,61 @@
-import React, {useRef} from 'react';
+import React, {useRef} from 'react'
+import PropTypes from 'prop-types'
 
-const getEventProp = (eventName) => {
-  // cases orders by dictionary order of eventName
-  switch(eventName) {
-    case 'blur': return 'onBlur';
-    case 'change': return 'onChange';
-    case 'click': return 'onClick';
-    case 'focus': return 'onFocus';
-    default: return undefined;
+import TextInputRenderer from './InputType/Text'
+import RadioInputRenderer from './InputType/Radio'
+import SelectInputRenderer from './InputType/Select'
+import CheckboxInputRenderer from './InputType/Checkbox'
+
+const getRenderer = (type) => {
+  switch(type.toLowerCase()) {
+    case 'tel':
+    case 'url':
+    case 'text':
+    case 'date':
+    case 'time':
+    case 'file':
+    case 'week':
+    case 'month':
+    case 'image':
+    case 'email':
+    case 'color':
+    case 'range':
+    case 'number':
+    case 'search':
+    case 'password':
+      return TextInputRenderer
+    case 'radio': return RadioInputRenderer
+    case 'select': return SelectInputRenderer
+    case 'checkbox': return CheckboxInputRenderer
+    default: return 'div'
   }
 }
 
 const Input = ({
-  field : { label, type, name, placeholder, validations = [] }
+  field = {},
+  onChange = () => {},
+  registerField = () => {},
 }) => {
   const inputRef = useRef(null)
-  const id = `input-id-${+Date.now()}-${Math.random()}`
 
-  const props = validations.reduce((acc, item) => {
-    acc[getEventProp(item.on)] = () => {
-      console.log(inputRef.current.value)
-    }
-    return acc;
-  }, { id, type, name, placeholder })
-  
+  const Component = getRenderer(field.type)
+
   return (
     <div className="form-field">
-      <label htmlFor={id}>{label}</label>
-      <input ref={inputRef} {...props} />
+      <Component
+        {...field}
+        ref={inputRef}
+        registerField={registerField}
+        onChange={(...args) => onChange(field.name, ...args)}
+      />
     </div>
   )
+}
+
+Input.propTypes = {
+  field: PropTypes.object.isRequired,
+  registerField: PropTypes.func,
+  onChange: PropTypes.func,
 }
 
 export default Input

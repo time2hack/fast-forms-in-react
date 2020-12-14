@@ -1,0 +1,1 @@
+export default () => ['input', +Date.now(), Math.random()].join('-')

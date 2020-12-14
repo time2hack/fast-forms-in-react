@@ -2,3 +2,10 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color: #ddd;
+    background: #333;
+  }
+}
