@@ -5,7 +5,7 @@
   "description": "React example starter project",
   "keywords": ["react", "forms", "reactjs", "html5"],
   "main": "src/index.js",
-  "homepage": "https://pankajpatel.github.io/fast-forms-in-react/",
+  "homepage": "https://time2hack.github.io/fast-forms-in-react/",
   "dependencies": {
     "react": "17.0.0",
     "react-dom": "17.0.0",
