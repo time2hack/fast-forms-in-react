@@ -1,0 +1,2 @@
+.form{display:block}.form-field{max-width:450px;display:flex;margin:10px auto}.form-field>label{flex:0 0 200px;text-align:right}.form-field>*{flex:0 0 250px;display:inline-block;margin:5px;font-weight:700}.flex-col{display:flex;flex-direction:column;text-align:left}.form-field ul{display:block;list-style:none}input[type=checkbox],input[type=radio]{margin-right:10px}.App{font-family:sans-serif;text-align:center}@media (prefers-color-scheme:dark){html{background:#333}a,html{color:#ddd}}
+/*# sourceMappingURL=main.cca75e55.chunk.css.map */
