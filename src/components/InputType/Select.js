@@ -3,8 +3,8 @@ import getId from '../../utils/get-id'
 
 export default React.forwardRef(({options, registerField, ...props}, ref) => {
   useEffect(() => {
-    registerField(props.name, ref)
-  }, [registerField, props.name])
+    registerField(props.name, ref);
+  }, [registerField, props.name, ref]);
 
   const id = getId()
   return (

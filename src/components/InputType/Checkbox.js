@@ -5,8 +5,8 @@ export default React.forwardRef(({registerField, ...props}, ref) => {
   const refs = useRef([])
   refs.current = (props.options || []).map(item => useRef(null))
   useEffect(() => {
-    registerField(props.name, props.options ? refs : ref)
-  }, [registerField, props.name, props.options])
+    registerField(props.name, props.options ? refs : ref);
+  }, [registerField, props.name, props.options, ref]);
   const id = getId()
   return (
     <Fragment>

@@ -1,8 +1,9 @@
 {
-  "name": "react",
+  "private": true,
+  "name": "fast-forms",
   "version": "1.0.0",
   "description": "React example starter project",
-  "keywords": ["react", "starter"],
+  "keywords": ["react", "forms", "reactjs", "html5"],
   "main": "src/index.js",
   "homepage": "https://pankajpatel.github.io/fast-forms-in-react/",
   "dependencies": {
